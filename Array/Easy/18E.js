@@ -24,6 +24,9 @@ function MonotonicArray (nums){
         if (nums[i] < nums[i + 1]) {
             decreasing = false;
         }
+        if (!increasing && !decreasing) {
+            return false;
+        }
     }
     return increasing || decreasing;
 }
