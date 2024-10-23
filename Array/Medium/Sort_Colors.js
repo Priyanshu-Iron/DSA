@@ -78,3 +78,5 @@ function SortColors (nums){
 }
 
 console.log(SortColors(nums));
+
+// TC = O(N) and and SC = O(N)
