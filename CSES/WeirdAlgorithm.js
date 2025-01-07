@@ -8,19 +8,33 @@
     Your task is to simulate the execution of the algorithm for a given value of n.
 **/
 
-const input = 3
+const readline = require('readline');
 
-function WeirdAlgorithm (input) {
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.on('line', (line) => {
+    const userInput = parseInt(line, 10);
+
+    if (isNaN(userInput) || userInput <= 0) {
+        console.log("Please enter a valid positive integer.");
+    } else {
+        WeirdAlgorithm(userInput);
+    }
+
+    rl.close();
+});
+
+function WeirdAlgorithm(input) {
     while (input !== 1) {
         console.log(input);
         if (input % 2 === 0) {
-            input = input / 2 
-        } else{
-            input = input*3+1
+            input = input / 2;
+        } else {
+            input = input * 3 + 1;
         }
     }
     console.log(input);
-    return input
 }
-
-WeirdAlgorithm(input);
